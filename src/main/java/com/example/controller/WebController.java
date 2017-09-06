@@ -10,5 +10,10 @@ public class WebController {
 	public String getIndex() {
 		return "index";
 	}
+	
+	@RequestMapping(value="/addCourseWeb" )
+	public String getAddCourse() {
+		return "addCourse";
+	}
 
 }

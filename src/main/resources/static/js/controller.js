@@ -75,12 +75,41 @@ app.controller('getcustomer', function($scope, $http, $location) {
 	}
 });
 
-//asdasd
+
 app.controller('testController', function($scope){
 	$scope.testControllerMessage ="ABCanz";
 	$scope.testFunction = function(){
 		$scope.testControllerMessage ="Message from function";
 	}
-}
+});
 
-)
+//Add Course Controller
+app.controller('addCourse', function($scope, $http, $location) {
+	$scope.createCourse = function() {
+		var url = "/addCourse";
+
+		var config = {
+			headers : {
+				'Content-Type' : 'application/json;charset=utf-8;'
+			}
+		}
+		var data = {
+			/*
+			 * firstName is the one in Java Class and firstnames is the one in
+			 * html index file
+			 */
+
+			courseName : $scope.coursename
+			
+		};
+
+		$http.post(url, data, config).then(function(response) {
+			$scope.postResultMessage = response.data;
+		}, function(response) {
+			$scope.postResultMessage = "Fail!";
+		});
+
+		$scope.coursename = "";
+		
+	}
+});
