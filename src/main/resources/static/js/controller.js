@@ -1,5 +1,7 @@
 var app = angular.module('app', []);
 
+/*
+
 app.controller('postcontroller', function($scope, $http, $location) {
 	$scope.submitForms = function() {
 		var url = $location.absUrl() + "postcustomer";
@@ -10,10 +12,10 @@ app.controller('postcontroller', function($scope, $http, $location) {
 			}
 		}
 		var data = {
-			/*
+			
 			 * firstName is the one in Java Class and firstnames is the one in
 			 * html index file
-			 */
+			 
 
 			firstName : $scope.firstnames,
 			lastName : $scope.lastnames
@@ -47,6 +49,8 @@ app.controller('getcontroller', function($scope, $http, $location) {
 		});
 	}
 });
+*/
+
 
 // The controller
 
@@ -112,4 +116,21 @@ app.controller('addCourse', function($scope, $http, $location) {
 		$scope.coursename = "";
 		
 	}
+	$scope.getAllCourse=function (){
+		var url = "getAllCourse";
+
+		var config = {
+			headers : {
+				'Content-Type' : 'application/json;charset=utf-8;'
+			}
+		}
+
+		$http.get(url, config).then(function(myResponse) {
+			$scope.myResponse = myResponse.data
+		}, function(myResponse) {
+			$scope.getResultMessage = "Fail!";
+		});
+	}
 });
+
+

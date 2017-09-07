@@ -34,12 +34,15 @@
 							class="form-control" placeholder="Course Name" ng-model="coursename" />
 					</div>
 					<p>
-						<button type="submit"  class="btn btn-primary">Submit</button>
+						<button type="submit" class="btn btn-primary" ng-click="getAllCourse()">Submit</button>
 					</p>
 					{{postResultMessage.courseName}}
 				</form>
+				<div ng-repeat="course in myResponse">{{course.courseName}}</div>
 			</div>
 		</div>
+
+		
 
 
 	</div>

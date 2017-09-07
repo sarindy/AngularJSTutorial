@@ -1,5 +1,8 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +22,14 @@ public class ApiController {
 	public Course addCourse(@RequestBody Course course) {
 		courseService.addCourse(course);
 		return course;
+		
+	}
+	
+	@RequestMapping(value="/getAllCourse")
+	public List<Course> getAllCourse() {
+		List<Course> courseList = new ArrayList<>();
+		courseService.getAllCourse().forEach(courseList::add);
+		return courseList;
 		
 	}
 
