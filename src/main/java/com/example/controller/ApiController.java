@@ -18,14 +18,14 @@ public class ApiController {
 	@Autowired
 	private CourseService courseService;
 	
-	@RequestMapping(value="/addCourse",method=RequestMethod.POST)
+	@RequestMapping(value="/api/addCourse",method=RequestMethod.POST)
 	public Course addCourse(@RequestBody Course course) {
 		courseService.addCourse(course);
 		return course;
 		
 	}
 	
-	@RequestMapping(value="/getAllCourse")
+	@RequestMapping(value="/api/getAllCourse")
 	public List<Course> getAllCourse() {
 		List<Course> courseList = new ArrayList<>();
 		courseService.getAllCourse().forEach(courseList::add);

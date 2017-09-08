@@ -3,51 +3,51 @@ var app = angular.module('app', []);
 /*
 
 app.controller('postcontroller', function($scope, $http, $location) {
-	$scope.submitForms = function() {
-		var url = $location.absUrl() + "postcustomer";
+$scope.submitForms = function() {
+var url = $location.absUrl() + "postcustomer";
 
-		var config = {
-			headers : {
-				'Content-Type' : 'application/json;charset=utf-8;'
-			}
-		}
-		var data = {
-			
-			 * firstName is the one in Java Class and firstnames is the one in
-			 * html index file
-			 
+var config = {
+headers : {
+'Content-Type' : 'application/json;charset=utf-8;'
+}
+}
+var data = {
 
-			firstName : $scope.firstnames,
-			lastName : $scope.lastnames
-		};
+* firstName is the one in Java Class and firstnames is the one in
+* html index file
 
-		$http.post(url, data, config).then(function(response) {
-			$scope.postResultMessage = "Sucessful!";
-		}, function(response) {
-			$scope.postResultMessage = "Fail!";
-		});
 
-		$scope.firstname = "";
-		$scope.lastname = "";
-	}
+firstName : $scope.firstnames,
+lastName : $scope.lastnames
+};
+
+$http.post(url, data, config).then(function(response) {
+$scope.postResultMessage = "Sucessful!";
+}, function(response) {
+$scope.postResultMessage = "Fail!";
+});
+
+$scope.firstname = "";
+$scope.lastname = "";
+}
 });
 
 app.controller('getcontroller', function($scope, $http, $location) {
-	$scope.getfunction = function() {
-		var url = $location.absUrl() + "getallcustomer";
+$scope.getfunction = function() {
+var url = $location.absUrl() + "getallcustomer";
 
-		var config = {
-			headers : {
-				'Content-Type' : 'application/json;charset=utf-8;'
-			}
-		}
+var config = {
+headers : {
+'Content-Type' : 'application/json;charset=utf-8;'
+}
+}
 
-		$http.get(url, config).then(function(myResponse) {
-			$scope.myResponse = myResponse.data
-		}, function(myResponse) {
-			$scope.getResultMessage = "Fail!";
-		});
-	}
+$http.get(url, config).then(function(myResponse) {
+$scope.myResponse = myResponse.data
+}, function(myResponse) {
+$scope.getResultMessage = "Fail!";
+});
+}
 });
 */
 
@@ -90,7 +90,7 @@ app.controller('testController', function($scope){
 //Add Course Controller
 app.controller('addCourse', function($scope, $http, $location) {
 	$scope.createCourse = function() {
-		var url = "/addCourse";
+		var url = "/api/addCourse";
 
 		var config = {
 			headers : {
@@ -99,12 +99,12 @@ app.controller('addCourse', function($scope, $http, $location) {
 		}
 		var data = {
 			/*
-			 * firstName is the one in Java Class and firstnames is the one in
-			 * html index file
-			 */
+			* firstName is the one in Java Class and firstnames is the one in
+			* html index file
+			*/
 
 			courseName : $scope.coursename
-			
+
 		};
 
 		$http.post(url, data, config).then(function(response) {
@@ -114,10 +114,11 @@ app.controller('addCourse', function($scope, $http, $location) {
 		});
 
 		$scope.coursename = "";
-		
+
 	}
+
 	$scope.getAllCourse=function (){
-		var url = "getAllCourse";
+		var url = "/api/getAllCourse";
 
 		var config = {
 			headers : {
@@ -132,5 +133,3 @@ app.controller('addCourse', function($scope, $http, $location) {
 		});
 	}
 });
-
-
