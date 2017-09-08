@@ -11,7 +11,7 @@ public class WebController {
 		return "index";
 	}
 	
-	@RequestMapping(value="/addCourseWeb" )
+	@RequestMapping(value="/app/addCourseWeb" )
 	public String getAddCourse() {
 		return "addCourse";
 	}

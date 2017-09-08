@@ -58,11 +58,12 @@ app.controller('addCourse', function($scope, $http, $location) {
 				'Authorization' : 'Basic ' + 'YXBpQGRueW5uLmNvbToxMjM0NTY='
 			}
 		}
+		
 		console.log(config);
 		
 		
 
-		$http.get(url, config).then(function(myResponse) {
+		$http.get(url,config).then(function(myResponse) {
 			$scope.myResponse = myResponse.data
 		}, function(myResponse) {
 			$scope.getResultMessage = "Fail!";
