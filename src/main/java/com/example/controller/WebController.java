@@ -15,5 +15,10 @@ public class WebController {
 	public String getAddCourse() {
 		return "addCourse";
 	}
+	
+	@RequestMapping(value="/app/001" )
+	public String get001() {
+		return "/websystique/001";
+	}
 
 }
